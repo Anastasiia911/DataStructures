@@ -2,7 +2,7 @@ package algorithms;
 
 /**
  * Created by anastasiia_911 on 10/25/16.
- * Realisation of simple BUBBLE SORT
+ * Realisation of simple BUBBLE SORT. Complexity N*N
  */
 public class ArrayBubbleSort {
 
