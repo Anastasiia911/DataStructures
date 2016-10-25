@@ -2,7 +2,9 @@ package algorithms;
 
 /**
  * Created by anastasiia_911 on 10/25/16.
- * Method find() based on binary search
+ * Method find() based on binary search (each time divide array length on 2 and check if middle element more or less then )
+ * search element.
+ *
  */
 public class ArrayBinarySearch {
     private long[] array;
@@ -13,7 +15,7 @@ public class ArrayBinarySearch {
         nElems = 0;
     }
 
-    public int find(long searchKey) {
+    public int find (long searchKey) { //Binary search:
         int lowerBound = 0;
         int upperBound = nElems - 1;
         int midPosition;
@@ -37,4 +39,7 @@ public class ArrayBinarySearch {
 
     }
 
-}
+
+    }
+
+
