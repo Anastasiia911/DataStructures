@@ -36,7 +36,13 @@ public class MainApp {
         for (SortingAlgorithm sortingAlgorithm : allSortingAlgorithm) {
 
             ArraySort currArraySort = main.getSortingAlgorithm(sortingAlgorithm);
-            long[] currArray = currArraySort.fillRandomLongs(100);
+
+
+            //Random array
+            //  long[] currArray = currArraySort.fillRandomLongs(100000);
+            //Desc Array
+            long [] currArray = currArraySort.fillDescLongs(100000);
+
 
             //  String arrayBeforeSortString = Arrays.toString(currArray);
             // System.out.println(arrayBeforeSortString);
@@ -48,7 +54,7 @@ public class MainApp {
             long time = System.nanoTime() - start;
             System.out.println(sortingAlgorithm.toString()+" ");
             System.out.println(time + " nano seconds");
-            double timeSeconds = (double) time / 1000000;
+            double timeSeconds = (double) time / 100000;
             System.out.println(timeSeconds + " milli seconds\n");
 
             //String arrayAfterSortString = Arrays.toString(currArray);

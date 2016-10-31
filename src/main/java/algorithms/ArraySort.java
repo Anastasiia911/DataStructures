@@ -22,4 +22,15 @@ public abstract class ArraySort {
         return array;
     }
 
+    public long [] fillDescLongs (int maxSize){
+        long [] array = new long [maxSize];
+        long n;
+
+        for (int i=0; i <maxSize; i++){
+            n = maxSize-i;
+            array[i]=n;
+        }
+        return array;
+    }
+
 }

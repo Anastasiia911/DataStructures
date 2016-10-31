@@ -2,7 +2,7 @@ package algorithms;
 
 /**
  * Complexity of this algorithm is N*N
- * Faster if array is partially sorted
+ * Faster if array is partially sorted practically the fastest was tested on 100 000 and 10 000 elements
  */
 public class ArrayInsertionSort extends ArraySort {
 
