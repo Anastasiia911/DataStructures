@@ -3,54 +3,59 @@ import algorithms.ArrayInsertionSort;
 import algorithms.ArraySelectionSort;
 import algorithms.ArraySort;
 
-import java.util.Arrays;
-
 public class MainApp {
 
-    public ArraySort getSortingAlgorithm(Object sortType) {
-        ArraySort arraySort;
 
+    enum SortingAlgorithm {ArrayBubbleSort, ArrayInsertionSort, ArraySelectionSort}
 
-        if (sortType == "ArrayBubbleSort") {
-            arraySort = new ArrayBubbleSort();
+    public ArraySort getSortingAlgorithm(SortingAlgorithm sortingAlgorithm) {
+        ArraySort arraySort = null;
+
+        switch (sortingAlgorithm) {
+            case ArrayBubbleSort:
+                arraySort = new ArrayBubbleSort();
+                break;
+
+            case ArrayInsertionSort:
+                arraySort = new ArrayInsertionSort();
+                break;
+
+            case ArraySelectionSort:
+                arraySort = new ArraySelectionSort();
+                break;
         }
 
-        if (sortType == "ArrayInsertionSort") {
-            arraySort = new ArrayInsertionSort();
-        }
-        if (sortType == "ArraySelectionSort") {
-            arraySort = new ArraySelectionSort();
-        } else {
-            arraySort = new ArrayBubbleSort();
-
-        }
         return arraySort;
     }
 
 
     public static void main(String[] args) {
+        SortingAlgorithm[] allSortingAlgorithm = SortingAlgorithm.values();
         MainApp main = new MainApp();
-        ArraySort currArraySort = main.getSortingAlgorithm("ArrayBubbleSort");
-        long [] currArray = currArraySort.fillRandomLongs(100);
 
-        String arrayBeforeSortString = Arrays.toString(currArray);
-        System.out.println(arrayBeforeSortString);
+        for (SortingAlgorithm sortingAlgorithm : allSortingAlgorithm) {
 
-        long start = System.nanoTime();
+            ArraySort currArraySort = main.getSortingAlgorithm(sortingAlgorithm);
+            long[] currArray = currArraySort.fillRandomLongs(100);
 
-        currArraySort.sort(currArray);
+            //  String arrayBeforeSortString = Arrays.toString(currArray);
+            // System.out.println(arrayBeforeSortString);
 
-        long time = System.nanoTime()-start;
-        System.out.println(time+" nano seconds\n");
-        double timeSeconds =(double)time/1000000;
-        System.out.println(timeSeconds+" milli seconds\n");
+            long start = System.nanoTime();
 
-        String arrayAfterSortString =Arrays.toString(currArray);
-        System.out.println(arrayAfterSortString);
+            currArraySort.sort(currArray);
 
+            long time = System.nanoTime() - start;
+            System.out.println(sortingAlgorithm.toString()+" ");
+            System.out.println(time + " nano seconds");
+            double timeSeconds = (double) time / 1000000;
+            System.out.println(timeSeconds + " milli seconds\n");
+
+            //String arrayAfterSortString = Arrays.toString(currArray);
+            // System.out.println(arrayAfterSortString);
+
+        }
     }
-
-
 }
 
 
