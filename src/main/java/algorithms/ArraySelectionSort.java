@@ -1,24 +1,15 @@
 package algorithms;
 
 /**
- * Created by anastasiia_911 on 10/25/16.
  * Сортировка выбором - проще чем пузырьковая сортировка: количество перестановок сокращаеться с N*N до N
  * Последовательно перебираем все елементы и самый маленький ставим на позицию 0.
  * следующий проход начинается с позиции 1.
  */
-public class ArraySelectionSort {
+public class ArraySelectionSort extends ArraySort {
 
-    long[] array;
-    int nElems;
 
-    public ArraySelectionSort(int max) {
-
-        array = new long[max];
-        nElems = 0;
-
-    }
-
-    public void selectionSort() {
+    public long[] sort(long[] array) {
+        int nElems = array.length;
         int out, in, min;
         for (out = 0; out < nElems - 1; out++) {
             min = out;
@@ -26,12 +17,12 @@ public class ArraySelectionSort {
                 if (array[in] < array[min])
                     min = in;
 
-            swap(out, min);
+            swap(out, min, array);
         }
-
+        return array;
     }
 
-    private void swap(int first, int min) {
+    private void swap(int first, int min, long[] array) {
         long temp = array[first];
 
         array[first] = array[min];

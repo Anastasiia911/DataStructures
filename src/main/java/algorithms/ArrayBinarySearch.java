@@ -7,12 +7,15 @@ package algorithms;
  *
  */
 public class ArrayBinarySearch {
-    private long[] array;
-    private int nElems;
 
-    public ArrayBinarySearch(int max) {
-        array = new long[max];
-        nElems = 0;
+    static int arraylength = 10000;
+    static long[] array = new long[arraylength];
+    static int nElems = 0;
+    int maxSize = 10000;
+
+    public void insert(long value) {
+        array[nElems] = value;
+        nElems++;
     }
 
     public int find (long searchKey) { //Binary search:
