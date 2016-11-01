@@ -41,7 +41,7 @@ public class MainApp {
             //Random array
             //  long[] currArray = currArraySort.fillRandomLongs(100000);
             //Desc Array
-            long [] currArray = currArraySort.fillDescLongs(100000);
+            long [] currArray = currArraySort.fillDescLongs(1000);
 
 
             //  String arrayBeforeSortString = Arrays.toString(currArray);
