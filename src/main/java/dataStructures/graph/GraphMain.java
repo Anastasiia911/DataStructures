@@ -1,8 +1,6 @@
 package dataStructures.graph;
 
 
-import com.sun.tools.javac.util.List;
-
 import java.util.Arrays;
 
 public class GraphMain {
@@ -26,8 +24,13 @@ public class GraphMain {
         node7.setNeighbours(Arrays.asList(node4,node5));
         node8.setNeighbours(Arrays.asList(node6,node5));
 
+
         graph.setAllNodes(Arrays.asList(node1, node2, node3, node4, node5, node6, node7, node8));
 
         System.out.println(graph.toString());
+
+        System.out.println("----------");
+        graph.bsf();
+
     }
 }
