@@ -32,17 +32,30 @@ public class Fibonaccii {
             fibonacciValue = getFibonacciByIndex(index - 1) + getFibonacciByIndex(index - 2);
             fibonacciMap.put(index, fibonacciValue);
             return fibonacciValue;
-        }}
-
-        public long getFibonacciByIndexNotRecursive(int index){
-            long fibonacciValue = 0;
-
-
-
-            return fibonacciValue;
+        }
     }
 
+    public long getFibonacciByIndexNotRecursive(int index) {
 
+        long first = 1;
+        long second = 1;
+        long sum_fib=0;
+        if (index < 0) {
+            return 0;
+        }
+
+        if (index < 2) {
+            return first;
+        }
+        while (index > 1) {
+            sum_fib = first + second;
+            first = second;
+            second = sum_fib;
+            index--;
+        }
+
+        return sum_fib;
+    }
 
 
 }
