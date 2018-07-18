@@ -22,19 +22,19 @@ public class Graph {
 
     public void bsf() {
         Queue<Node> nodes = new LinkedBlockingQueue<>();
-        List<Node> visitedNodes = new ArrayList<>();
+        List<Node> checkedNodes = new ArrayList<>();
         Node parent = allNodes.get(0);
 
         nodes.add(parent);
-        visitedNodes.add(parent);
+        checkedNodes.add(parent);
 
         while (!nodes.isEmpty()) {
             Node currentNode = nodes.poll();
             System.out.println(currentNode.toString());
             for (Node neighbour : currentNode.getNeighbours()) {
-                if (!visitedNodes.contains(neighbour)) {
+                if (!checkedNodes.contains(neighbour)) {
                     nodes.add(neighbour);
-                    visitedNodes.add(neighbour);
+                    checkedNodes.add(neighbour);
                 } else {
                     System.out.println("skip visited " + neighbour);
                 }
