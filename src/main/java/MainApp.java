@@ -48,10 +48,9 @@ public class MainApp {
 
         // MyDeadLockOneObject deadLock = new MyDeadLockOneObject();
         //  deadLock.createLock();
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
 
         MyWordCounter wordCounter = new MyWordCounter();
-
 
         MyCustomWordCounter wordCounter1 = new MyCustomWordCounter();
 
