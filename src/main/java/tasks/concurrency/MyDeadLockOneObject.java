@@ -1,4 +1,4 @@
-package tasks;
+package tasks.concurrency;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -9,44 +9,43 @@ import java.util.concurrent.Executors;
  * Created by anastasiia_911 on 7/19/18.
  */
 @Slf4j
-public class MyDeadLock {
+public class MyDeadLockOneObject {
 
     ExecutorService executorService = Executors.newFixedThreadPool(2);
 
     String st1 = "First message";
-    String st2 = "Second message";
 
     private void runThread1() {
 
-        synchronized (st1) {
-            log.info("Synchronized Thread1 on st1...");
+        synchronized (this) {
+            log.info("Synchronized Thread1 on this...");
             try {
                 Thread.sleep(7000);
-                log.info("Thread1 woke up and trying to acquire log on st2...");
+                log.info("Thread1 woke up and trying to acquire log on st1...");
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            synchronized (st2) {
+            synchronized (st1) {
 
-                System.out.println(st1 + st2);
+                System.out.println(st1);
             }
         }
     }
 
     private void runThread2() {
 
-        synchronized (st2) {
-            log.info("Synchronized Thread2 on st2...");
+        synchronized (st1) {
+            log.info("Synchronized Thread2 on st1...");
             try {
                 Thread.sleep(7000);
-                log.info("Thread2 woke up and trying to acquire log on st1...");
+                log.info("Thread2 woke up and trying to acquire log on this...");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            synchronized (st1) {
+            synchronized (this) {
 
-                System.out.println(st1 + st2);
+                System.out.println(st1 );
             }
         }
     }

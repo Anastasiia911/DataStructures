@@ -1,4 +1,4 @@
-package tasks;
+package tasks.concurrency;
 
 import java.util.concurrent.ConcurrentHashMap;
 

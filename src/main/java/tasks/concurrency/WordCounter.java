@@ -1,4 +1,4 @@
-package tasks;
+package tasks.concurrency;
 
 
 public interface WordCounter {

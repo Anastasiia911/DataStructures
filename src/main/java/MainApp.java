@@ -1,11 +1,9 @@
-import algorithms.*;
 import lombok.extern.slf4j.Slf4j;
-import tasks.*;
+import tasks.concurrency.MyCustomWordCounter;
+import tasks.concurrency.MyWordCounter;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.LongAdder;
 
 @Slf4j
 public class MainApp {
@@ -64,6 +62,8 @@ public class MainApp {
         System.out.println(wordCounter1.getCount("Me"));
 
         executorService.shutdown();
+
+
 
     }
 

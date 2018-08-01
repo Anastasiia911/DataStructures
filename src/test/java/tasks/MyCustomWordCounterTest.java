@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import tasks.concurrency.MyCustomWordCounter;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
